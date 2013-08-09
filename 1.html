@@ -8,56 +8,10 @@
           $(document).ready( function() {
                var pop = Popcorn("#myaudio");
 
-               pop.code({
-                    start: 0,
-                    end: 5,
-                    onStart: function( options ) {
-                         $("#results_section").html("Part 1");
-                    },
-                    onEnd: function( options ) {
-                         $("#results_section").empty();
-                    }
-               });
-
-               pop.code({
-                    start: 6,
-                    end: 10,
-                    onStart: function( options ) {
-                         $("#results_section").html("Part 2");
-                    },
-                    onEnd: function( options ) {
-                         $("#results_section").empty();
-                    }
-               });
-
-               // load a wikipedia page
-               /*
-               pop.wikipedia({
-                    start: 11,
-                    end: 15,
-                    src: "http://en.wikipedia.org/wiki/HTML5",
-                    title: "HTML5 (Wikipedia)",
-                    target: "wiki_section"
-               });
-			*/
-
-			//replay
-			/*
-			pop.cue( 17, function() {
-				//this.currentTime(0);
-			});
-			*/
-
-               pop.on("ended" , thanks);
-
                $("#button_play").click(function(){ pop.play(); });
                $("#button_pause").click(function(){ pop.pause(); });
+
           });
-
-          function thanks(){
-               $("#results_section").html("Thanks for listening!");
-          }
-
      </script>
 
 </head>
@@ -70,16 +24,7 @@
           </audio>
      </div>
 
-     <div id="input_section">
-          <button id="button_play">PLAY</button>
-          <button id="button_pause">PAUSE</button>
-     </div>
-
-     <div id="results_section">
-     </div>
-
-
-     <div id="wiki_section">
-     </div>
+     <div id="results_section1"></div>
+     <div id="results_section2"></div>
 
 </body>
